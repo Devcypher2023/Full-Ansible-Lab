@@ -1,0 +1,10 @@
+---
+- hosts: db
+  become: true
+  gather_facts: yes
+  ignore_errors: false
+  vars:
+    package: vim,yum-utils
+  tasks:
+  - name: Install Package
+    yum: name={{ package }} state=latest

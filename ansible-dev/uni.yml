@@ -1,0 +1,9 @@
+---
+- hosts: db
+  become: true
+  
+  tasks:
+    - name: Ensure httpd is absent
+      yum:
+        name: httpd
+        state: absent
